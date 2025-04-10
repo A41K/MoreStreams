@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.score-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.score-box h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #888;
+}
+
+.score-box span {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.album {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.album:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.album-art {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.album img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.album:hover .hover-effect {
+    opacity: 1;
+}
+
+.album h3 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+    white-space: pre-line; /* This allows for line breaks in the text */
+    line-height: 1.5;
+}
+
+.vs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.vs {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ff3366;
+    text-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+}
+
+.vs-subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid #ff3366;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 51, 102, 0.1);
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.error button {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    background: #ff3366;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.error button:hover {
+    background: #ff1f4f;
+}
+
+.correct {
+    animation: correctChoice 0.5s ease;
+    background: rgba(46, 213, 115, 0.2);
+}
+
+.incorrect {
+    animation: incorrectChoice 0.5s ease;
+    background: rgba(255, 71, 87, 0.2);
+}
+
+@keyframes correctChoice {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes incorrectChoice {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.hidden {
+    display: none !important;
+}
